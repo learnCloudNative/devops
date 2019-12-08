@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productsearchapp
+  labels:
+    app: productsearchapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+     app: productsearchapp
+  template:
+    metadata:
+      labels:
+        app: productsearchapp
+    spec:
+      containers:
+      - name: productsearchapp
+        image: swarajitroy/techtonic:productsearchapp
